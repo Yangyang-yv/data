@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>猝死焦虑如何被看见：加入豆瓣讨论场 | 数据新闻可视化</title>
+    <link rel="stylesheet" href="data-news.css">
+    <link rel="stylesheet" href="data-news-v1.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">猝死焦虑如何被看见</a>
+      <nav aria-label="页面导航">
+        <a href="#worry">公众感受</a>
+        <a href="#medical">医学事实</a>
+        <a href="#platforms">平台传播</a>
+        <a href="#content">内容样态</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <img
+          src="2.jpg"
+          alt="医院监护设备与听诊器"
+        >
+        <div class="hero-copy">
+          <p class="kicker">基于大数据分析</p>
+          <h1>猝死，正在从医学名词变成社交平台上的日常焦虑</h1>
+          <p>
+            从健康报告、新闻资料到抖音、小红书、豆瓣的多平台数据，公众对“猝死”的理解
+            不只来自医学知识本身，也来自热点事件、生活压力和平台讨论不断叠加出的情绪现场。
+          </p>
+        </div>
+      </section>
+
+      <section class="lede-band lede-band-wide" aria-label="核心数据">
+        <div class="metric">
+          <strong data-count="56">0</strong><span>%</span>
+          <p>受访者最近一年曾担心自己猝死</p>
+        </div>
+        <div class="metric">
+          <strong data-count="55">0</strong><span>万</span>
+          <p>我国每年心源性猝死者约达该量级</p>
+        </div>
+        <div class="metric">
+          <strong data-count="3.3">0</strong><span>亿</span>
+          <p>中国心血管病现患病人数约达该规模</p>
+        </div>
+        <div class="metric">
+          <strong data-count="44.3">0</strong><span>亿</span>
+          <p>抖音 #猝死 话题曝光量</p>
+        </div>
+        <div class="metric">
+          <strong data-count="6147.6">0</strong><span>万</span>
+          <p>小红书 #猝死# 话题浏览量</p>
+        </div>
+      </section>
+
+      <section id="worry" class="section split">
+        <div class="section-copy">
+          <p class="kicker">01 公众感受</p>
+          <h2>越年轻、工作越长，越容易把“猝死”想成自己的风险</h2>
+          <p>
+            丁香医生 2022 国民健康洞察报告显示，只有 44% 的人“从未担心”猝死。
+            在年龄分组中，00 后和 95 后“每天或经常担心”的比例最高；工作时长超过 12 小时的人，
+            有过担心的比例达到 70%。
+          </p>
+        </div>
+        <div class="viz-panel">
+          <h3>最近一年你担心自己猝死吗</h3>
+          <div id="worryDonut" class="donut-wrap"></div>
+          <div id="worryLegend" class="legend"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="kicker">01A 压力曲线</p>
+          <h2>工作时间拉长，担忧比例同步上升</h2>
+        </div>
+        <div id="workBars" class="bar-grid"></div>
+      </section>
+
+      <section id="medical" class="section medical">
+        <div class="section-heading">
+          <p class="kicker">02 医学事实</p>
+          <h2>社交平台讨论的是焦虑，现实里要争夺的是时间</h2>
+        </div>
+        <div class="medical-grid">
+          <div>
+            <h3>心源性猝死占多数</h3>
+            <p>
+              文献资料显示，猝死可分为心源性与非心源性两类。心源性猝死约占猝死的
+              80%，常见相关因素包括冠心病、致命性心律失常、心肌炎、肥厚性心肌病等。
+            </p>
+            <div class="stacked" aria-label="心源性猝死占比">
+              <span style="width:80%">心源性 80%</span>
+              <b style="width:20%">非心源性 20%</b>
+            </div>
+          </div>
+          <div>
+            <h3>抢救成功率随分钟下降</h3>
+            <p>
+              心脏骤停后 1 分钟内实施心肺复苏并使用 AED，抢救成功率可达 90%；每延误 1 分钟，
+              成功率下降约 10%。真正决定结局的，往往不是话题热度，而是现场反应速度。
+            </p>
+            <div id="rescueChart" class="rescue-chart"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cause-signs">
+        <div class="section-heading">
+          <p class="kicker">02A 医学补充</p>
+          <h2>比“猝死”这个结果更重要的，是看见它前面的原因和身体信号</h2>
+          <p>
+            根据“央视新闻”整理的公开资料，年轻人猝死常常和长期熬夜、吸烟、高热量饮食、
+            久坐不动等生活方式相关；而真正容易被忽视的，是胸闷、胸痛、心慌、呼吸不畅等预警征兆。
+          </p>
+        </div>
+        <div class="cause-sign-grid">
+          <div class="viz-panel">
+            <h3>年轻人猝死的常见诱因</h3>
+            <div id="causeCards" class="cause-cards"></div>
+          </div>
+          <div class="viz-panel">
+            <h3>猝死前可能出现的征兆</h3>
+            <div class="sign-block">
+              <p class="sign-title">典型征兆</p>
+              <div id="typicalSigns" class="sign-list"></div>
+            </div>
+            <div class="sign-block">
+              <p class="sign-title">不典型征兆</p>
+              <div id="atypicalSigns" class="sign-list muted-signs"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="platforms" class="section split reverse">
+        <div class="section-copy">
+          <p class="kicker">03 平台传播</p>
+          <h2>同一个“猝死”，在三种平台里被放大成三种完全不同的话题结构</h2>
+          <p>
+            如果把抖音、小红书、豆瓣放在一起看，差异并不只在“谁更火”。抖音负责把事件推成
+            全网可见的爆点，小红书负责把恐惧转译成“前兆”“预防”“自救”的可操作知识，
+            豆瓣则把个体焦虑延长成带有社会议题色彩的连续讨论。
+          </p>
+        </div>
+        <div class="platform-cards" aria-label="三平台角色">
+          <article class="platform-card accent-red">
+            <p class="platform-name">抖音</p>
+            <strong>44.3 亿</strong>
+            <p>#猝死 话题曝光量最高，最擅长把单一事件推成高可见度公共热点。</p>
+          </article>
+          <article class="platform-card accent-teal">
+            <p class="platform-name">小红书</p>
+            <strong>6147.6 万</strong>
+            <p>#猝死# 话题浏览量高，用户更集中搜索前兆、预防、急救与日常护心。</p>
+          </article>
+          <article class="platform-card accent-amber">
+            <p class="platform-name">豆瓣</p>
+            <strong>4.24 万</strong>
+            <p>1224 个主题累计回复量，讨论停留时间更长，也更容易衍生情绪与责任追问。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section platform-detail">
+        <div class="section-heading">
+          <p class="kicker">03A 平台细看</p>
+          <h2>三个平台并不是平均分工，而是分别贡献了“传播力”“方法性”和“讨论链条”</h2>
+          <p>
+            从现有样本看，三个平台并不需要机械平均。抖音最有传播强度，小红书最有生活化方法价值，
+            豆瓣虽然总体量级不如前两者，但在“为什么大家会对猝死持续焦虑”这件事上，研究价值反而更高。
+          </p>
+        </div>
+        <div id="platformResearch" class="platform-research"></div>
+        <div class="platform-bottom">
+          <div class="platform-summary-note">
+            <p>
+              抖音词条榜显示，#猝死 的曝光量达到 44.3 亿，明显承担“事件入口”的作用。
+              小红书词条榜里，#猝死前兆#、#猝死预防#、#预防猝死# 等词条稳定出现，说明用户更关注
+              可操作的信息。豆瓣则在 1224 条帖子里积累出 42437 条回复，平均每帖 34.7 条、中位数 12 条，
+              其中 105 条帖子回复过百，说明它更容易形成持续性讨论而非一次性浏览。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="kicker">03B 话题榜</p>
+          <h2>同一个关键词，在三个平台分别长成爆点、方法和讨论</h2>
+        </div>
+        <div class="topic-layout triple">
+          <div>
+            <h3>抖音话题曝光量</h3>
+            <div id="douyinTopics" class="rank-list"></div>
+          </div>
+          <div>
+            <h3>小红书话题浏览量</h3>
+            <div id="xhsTopics" class="rank-list"></div>
+          </div>
+          <div>
+            <h3>豆瓣高频讨论组</h3>
+            <div id="doubanGroups" class="rank-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="content" class="section content-section">
+        <div class="section-heading">
+          <p class="kicker">04 内容样态</p>
+          <h2>最容易扩散的话题，一半是急救科普，一半是工作与突然离世的代入感</h2>
+        </div>
+        <div class="content-grid triple">
+          <div>
+            <h3>抖音高赞内容</h3>
+            <div id="douyinContent" class="story-list"></div>
+          </div>
+          <div>
+            <h3>小红书高互动内容</h3>
+            <div id="xhsContent" class="story-list"></div>
+          </div>
+          <div>
+            <h3>豆瓣高回复讨论</h3>
+            <div id="doubanContent" class="story-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="image-break">
+        <img
+          src="1.png"
+          alt="手机屏幕上的信息流"
+        >
+        <div>
+          <p class="kicker">05 关键词云</p>
+          <h2>“健康”“熬夜”“加班”“上班”“年轻”把医学风险一路推回生活现场</h2>
+          <div id="wordCloud" class="word-cloud"></div>
+        </div>
+      </section>
+
+      <section class="section conclusion">
+        <div class="conclusion-layout">
+          <div class="conclusion-copy">
+            <p class="kicker">结论</p>
+            <h2>猝死之所以成为公共话题，不只是因为风险真实存在，也因为它不断被看见、被讨论、被放大</h2>
+            <p>
+              猝死之所以会成为今天高频出现的公共话题，并不只是因为它是一种医学风险，
+              更因为它被平台传播、生活压力与社会情绪不断放大。数据里可以看到，公众的担忧首先来自
+              真实的健康隐患，比如心血管疾病的高患病规模、心源性猝死的高比例，以及年轻人长期熬夜、
+              久坐、压力过大等生活方式风险；与此同时，抖音、小红书和豆瓣又分别把这种风险转化成
+              热点事件、实用方法和持续讨论，使“猝死”从医学名词变成了日常焦虑的一部分。
+            </p>
+            <p>
+              因此，这组数据真正想提醒的，不是制造恐慌，而是帮助人们把模糊的担忧拆解成可以识别的信息：
+              哪些生活习惯正在增加风险，哪些身体信号可能是预警，哪些急救知识能在关键时刻争取时间。
+              比起反复转发“又有人猝死了”，更重要的也许是更早识别风险、更及时调整生活方式，
+              并在真正的危急时刻知道该怎么做。
+            </p>
+            <p class="source">
+              数据来源：1 春雨.猝死原因多,心源性占多数[J].江苏卫生保健,2021,(05):12-13。
+              2 【丁香医生】2022 国民健康洞察报告。
+              3 抖音/小红书/豆瓣相关数据。
+            </p>
+          </div>
+          <div class="conclusion-visual">
+            <img src="3.jpg" alt="猝死相关信息传播截图">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="data-news-v1.js"></script>
+  </body>
+</html>
